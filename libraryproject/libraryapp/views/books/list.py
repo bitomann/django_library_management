@@ -10,7 +10,7 @@ def book_list(request):
     if request.method == 'GET':
         # opens, and then closes connection, because we use 'with'
         with sqlite3.connect(Connection.db_path) as conn:
-            # make a row factory. sqlite3.Row bascially puts keys on our tuples
+            # make a row factory. sqlite3.Row basically puts keys on our tuples
             conn.row_factory = sqlite3.Row
             # create a cursor object
             db_cursor = conn.cursor()
