@@ -95,4 +95,9 @@ celerybeat-schedule
 dmypy.json
 # Pyre type checker
 .pyre/
+
+libraryenv/
+*__pycache__/
+.DS_Store
+libraryapp/views/__pycache__/__init__.cpython-37.pyc
 # End of https://www.gitignore.io/api/django
