@@ -67,7 +67,7 @@ TEMPLATES = [
         },
     },
 ]
-# /Users/Bito1/workspace/C38/back-end/python/library-management/libraryproject/db.sqlite3
+
 
 WSGI_APPLICATION = 'libraryproject.wsgi.application'
 
