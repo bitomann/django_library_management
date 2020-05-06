@@ -20,7 +20,7 @@ def book_list(request):
             select
                 b.id,
                 b.title,
-                b.isbn_number,
+                b.isbn,
                 b.author,
                 b.year_published,
                 b.librarian_id,
@@ -37,7 +37,7 @@ def book_list(request):
                 book = Book()
                 book.id= row['id']
                 book.title = row['title']
-                book.ISBN_number = row['isbn_number']
+                book.isbn = row['isbn']
                 book.author = row['author']
                 book.year_published = row['year_published']
                 book.librarian_id = row['librarian_id']
@@ -65,12 +65,12 @@ def book_list(request):
             db_cursor.execute("""
             INSERT INTO libraryapp_book
             (
-                title, author, isbn_number,
+                title, author, isbn,
                 year_published, location_id, librarian_id
             )
             VALUES (?, ?, ?, ?, ?, ?)
             """,
-            (form_data['title'], form_data['author'], form_data['isbn_number'],
+            (form_data['title'], form_data['author'], form_data['isbn'],
             form_data['year_published'], request.user.id, form_data['location']))
 
         return redirect(reverse('libraryapp:books'))
